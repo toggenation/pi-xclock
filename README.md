@@ -1,12 +1,13 @@
 # Full Screen Digital Clock for Raspberry Pi
 
 
-Install Unclutter to remove cursor when screen is inactive
+Install `unclutter` to remove cursor when screen is inactive
 
-Run X not wayland (not sure if this is needed)
+Run X not Wayland (not sure if this is needed)
 
-Install x1-apps to get `xclock`
+Install x11-apps to get `xclock`
 
+Using `raspi-config` set autologin for your account
 
 
 ```sh
@@ -28,8 +29,12 @@ echo Boot `date` >> /tmp/runxclock.log
 -face 'Archivo Narrow:style=SemiBold:size=420' -padding 40
 ```
 
+Get a list of fonts using `fc-list`
+
+Add extra fonts to `~/.fonts` and run fc-cache -f to update.
 
 Auto start it at boot
+
 ```sh
 # .config/lxsession/LXDE-pi/autostart
 @lxterminal -e /home/ja/pi-xclock/runxclock.sh
