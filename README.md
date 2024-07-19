@@ -34,7 +34,11 @@ Modify your standard Pi desktop to hide the toolbar and autostart xclock at boot
 
 ```sh
 # in .config/lxsession/LXDE-pi/autostart
-@lxterminal -e /home/ja/pi-xclock/runxclock.sh
+# this left the terminal on top of xclock
+# @lxterminal -e /home/ja/pi-xclock/runxclock.sh
+
+# this worked
+/home/ja/pi-xclock/runxclock.sh
 ```
 
 To run `xclock` over SSH use the following command
