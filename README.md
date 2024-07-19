@@ -57,10 +57,15 @@ DISPLAY=:0 xclock -digital -strftime '%H:%M:%S'  -update 1 \
 - Very light resource usage
 
 ## Con's
-- I found it impossible to get the time vertically centred so if this is important you need another solution. I tried using editres and tweaking XResource settings but just couldn't getting it exactly right.
+- I found it impossible to get the time vertically centred so if this is important you need another solution. I tried using `editres` and tweaking XResource settings but just couldn't get it exactly right.
 - `%n` the `strftime` new-line doesn't work
 
-This is an example screenshot using Archivo font
+
+## Screenshots
+
+This is an example screenshot (I took them on the Pi logged in via SSH using `DISPLAY=:0 scrot`
+
+The font used here is Archivo Narrow
 
 ![screen shot](screenshot/2024-07-19-213320_1920x1080_scrot.png)
 
