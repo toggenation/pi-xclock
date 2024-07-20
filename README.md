@@ -99,15 +99,35 @@ sudo cp splash.png /usr/share/plymouth/themes/pix/splash.png
 sudo plymouth-set-default-theme -R pix
 ```
 
+Modify `/usr/share/plymouth/themes/pix/pix.script` if you want to remove the systemd loading text sprite:
+
+```sh
+# message_sprite = Sprite();
+# message_sprite.SetPosition(screen_width * 0.1, screen_height * 0.9, 10000);
+
+fun message_callback (text) {
+#	my_image = Image.Text(text, 1, 1, 1);
+#	message_sprite.SetImage(my_image);
+	sprite.SetImage (resized_image);
+}
+
+```
+
+Remember to re-run the following to compile it into the initrd's
+
+```sh
+sudo plymouth-set-default-theme -R pix
+```
+
 ## Screenshots
 
 This is an example screenshot (I took them on the Pi logged in via SSH using `DISPLAY=:0 scrot`
 
 The font used here is Archivo Narrow
 
-![screen shot](screenshot/2024-07-19-213320_1920x1080_scrot.png)
+![screen shot](screenshot/2024-07-20-130404_1920x1080_scrot.png)
 
-This is an example with Liberation Sans Narrow font and trying to embed a newline using strftime `%n%H:%M:%S`
+This is an example with Liberation Sans Narrow font and trying to embed a newline using strftime `%n%H:%M:%S` which doesn't work (so you can't have date and time on two lines with xclock)
 ![screen shot](screenshot/2024-07-19-214905_1920x1080_scrot.png)
 
 ### Version of Pi

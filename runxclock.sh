@@ -19,8 +19,8 @@ xsetroot -solid $BACKGROUND
 
 /usr/bin/xclock -digital \
 -strftime $TIME_FORMAT \
--update 1 -fg $FOREGROUND \
--bg $BACKGROUND \
+-update 1 -fg "$FOREGROUND" \
+-bg "$BACKGROUND" \
 -geometry $GEOMETRY \
--face $FONT \
+-face "$FONT" \
 -padding $PADDING
