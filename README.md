@@ -1,7 +1,7 @@
 # Full Screen Digital Clock for Raspberry Pi
 
 Using `raspi-config`
-Set to run X not Wayland (not sure if this is needed)
+Set to run X not Wayland
 Set autologin for your account
 
 Install: 
