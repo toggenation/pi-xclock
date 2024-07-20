@@ -34,10 +34,10 @@ Modify your standard Pi desktop to hide the toolbar and autostart xclock at boot
 
 ```sh
 # in .config/lxsession/LXDE-pi/autostart
-# this left the terminal on top of xclock
+# the next commented line left the terminal on top of xclock
 # @lxterminal -e /home/ja/pi-xclock/runxclock.sh
 
-# this
+# this works
 /home/ja/pi-xclock/runxclock.sh
 ```
 
@@ -57,11 +57,17 @@ DISPLAY=:0 xclock -digital -strftime '%H:%M:%S'  -update 1 \
 - Very light resource usage
 
 ## Con's
-- I found it impossible to get the time vertically centred so if this is important you need another solution. I tried using `editres` and tweaking XResource settings but just couldn't get it exactly right.
 - `%n` the `strftime` new-line doesn't work
 
 ## Change boot splash
 
+Remove the multi-colour boot splash
+
+```
+# in /boot/firmware/config.txt add
+
+disable_splash=1
+```
 Create an image smaller than the resolution use `fbset` to find your screen resolution
 
 ```sh
