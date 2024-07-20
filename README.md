@@ -31,7 +31,6 @@ echo Boot `date` >> /tmp/runxclock.log
 -bg '#414141' -geometry '1920x1080+0+100' \
 -face 'Archivo Narrow:style=SemiBold:size=420' -padding 40
 ```
-
 Adjust the background (-bg) and foreground (-fg) colours using colour names or #RGB codes. Here is a list of X11 colours [https://en.wikipedia.org/wiki/X11_color_names](https://en.wikipedia.org/wiki/X11_color_names)
 
 Set the screen geometry to match your monitor
@@ -87,7 +86,12 @@ endmode
 
 ```
 
-I wanted a splash screen that uses 80% of the vertical height so 1080 * 0.8 = 864 so resized the png splash image I had with Gimp to 860x860 and upload to the Pi
+I wanted a splash screen that uses approximately 80% of the vertical height 
+so 1080 * 0.8 = 864 so resized the square PNG splash image I had with Gimp 
+to 800x800 and upload to the Pi
+
+800 allows some room so the service start messages on the boot don't look like 
+they are colliding with the splash image
 
 
 ```sh
