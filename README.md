@@ -130,6 +130,10 @@ The font used here is Archivo Narrow
 This is an example with Liberation Sans Narrow font and trying to embed a newline using strftime `%n%H:%M:%S` which doesn't work (so you can't have date and time on two lines with xclock)
 ![screen shot](screenshot/2024-07-19-214905_1920x1080_scrot.png)
 
+
+Two lines of xclock output
+![screen shot](screenshot/2024-07-20-141413_1920x1080_scrot.png)
+
 ### Version of Pi
 ```
 cat /etc/debian_version
