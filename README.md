@@ -60,6 +60,28 @@ DISPLAY=:0 xclock -digital -strftime '%H:%M:%S'  -update 1 \
 - I found it impossible to get the time vertically centred so if this is important you need another solution. I tried using `editres` and tweaking XResource settings but just couldn't get it exactly right.
 - `%n` the `strftime` new-line doesn't work
 
+## Change boot splash
+
+Create an image smaller than the resolution use `fbset` to find your screen resolution
+
+```sh
+fbset
+# output
+mode "1920x1080"
+    geometry 1920 1080 1920 1080 16
+    timings 0 0 0 0 0 0 0
+    rgba 5/11,6/5,5/0,0/0
+endmode
+
+```
+
+I wanted a splash screen that uses 80% of the vertical height so 1080 * 0.8 = 864 so resized the png splash image I had with Gimp to 860x860 and upload to the Pi
+
+
+```sh
+sudo cp splash.png /usr/share/plymouth/themes/pix/splash.png 
+sudo plymouth-set-default-theme -R pix
+```
 
 ## Screenshots
 
