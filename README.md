@@ -4,12 +4,17 @@ Using `raspi-config`
 Set to run X not Wayland (not sure if this is needed)
 Set autologin for your account
 
-Install x11-apps to get `xclock` and `unclutter` to remove cursor when screen is inactive
+Install: 
+- x11-apps to get `xclock`
+- `unclutter` to remove cursor when screen is inactive
+- `ntpsec` to sync Pi local machine clock with internet time
 
 ```sh
-apt-get install unclutter x11-apps
+apt-get install unclutter x11-apps ntpsec
 ```
-Download and install a font of your choice. You need something tall and skinny look for "Narrow" or "Condensed" variants. Get a list of installed fonts using `fc-list`
+Download and install a font of your choice. You need something tall and skinny look for "Narrow" or "Condensed" variants. 
+
+Get a list of installed fonts using `fc-list`
 
 I chose to install Archivo [https://fonts.google.com/specimen/Archivo](https://fonts.google.com/specimen/Archivo)
 
@@ -23,9 +28,10 @@ echo Boot `date` >> /tmp/runxclock.log
 /usr/bin/unclutter -display :0 -noevents -grab &
 
 /usr/bin/xclock -digital -strftime '%H:%M:%S'  -update 1 -fg '#F8F8FF' \
--bg '#414141' -geometry '1920x1080' \
+-bg '#414141' -geometry '1920x1080+0+100' \
 -face 'Archivo Narrow:style=SemiBold:size=420' -padding 40
 ```
+
 Adjust the background (-bg) and foreground (-fg) colours using colour names or #RGB codes. Here is a list of X11 colours [https://en.wikipedia.org/wiki/X11_color_names](https://en.wikipedia.org/wiki/X11_color_names)
 
 Set the screen geometry to match your monitor
